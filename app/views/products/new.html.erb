@@ -1,2 +1,21 @@
 <h1>Products#new</h1>
 <p>Find me in app/views/products/new.html.erb</p>
+<% form_for @product do |p| %>
+
+	<p>
+		<%= p.label "name" %><br>
+		<%= p.text_field %>
+	</p>
+	<p>
+		<%= p.label "description" %><br>
+		<%= p.text_field "description" %>
+	</p>
+	<p>
+		<%= p.label "price_in_cents" %><br>
+		<%= p.text_field "price_in_cents" %>
+	</p>
+	<p>
+		<%= submit_tag "Save" %> 
+	</p>
+
+<% end %>
