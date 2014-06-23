@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-  	@product = Product.find(params[:id])
+  	@product = Product.new(params[:id])
   end
 
   def create
@@ -42,6 +42,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-  	params.require(:product).permit(:)
+  	params.require(:product).permit(:name, :description, :price_in_cents)
   end
 end
