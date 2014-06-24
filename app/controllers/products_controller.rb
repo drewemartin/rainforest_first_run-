@@ -4,7 +4,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-  	@product = Product.find(params[:id])
+  	def show
+    @product = Product.find(params[:id])
+
+    if current_user
+      @review = @product.reviews.build
+    end #if you are a logged in you can make a new review
+end
   end
 
   def new
